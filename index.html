@@ -23,8 +23,9 @@
         let userScore = 0;
 
         function getUserchoice() {
-            const userchoice = prompt("Rock-paper-scrissors game.\nEnter 'rock', 'paper' or 'scissors' to play. \nYour score = " + userScore);
-            return userchoice.toLowerCase();
+            const userchoice = prompt("Rock-paper-scrissors game.\nEnter 'rock', 'paper' or 'scissors' to play. \nYour score = " + userScore).toLowerCase();
+            if (userchoice == "rock" || userchoice == "paper" || userchoice == "scissors") return userchoice;
+            else alert("NOT A VALID VALUE");
         }
 
         function playRound() {
