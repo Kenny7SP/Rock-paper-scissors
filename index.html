@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-papers-scissors</title>
+</head>
+<body style="background-color: rgb(68, 12, 119);">
+    <script>
+
+        function getComputerchoice() {
+            const chance0 = Math.round(Math.random());
+            const chance1 = Math.round(Math.random());
+            console.log(chance0, chance1);
+            if (chance0 !== chance1) {
+                return("scissors");
+            } else { switch(chance0) {
+                case 1:
+                    return("papper");
+                    break;
+                case 0:
+                    return("rock");
+                    break;
+                }
+            }
+        }
+
+        let userScore = 0;
+
+        function getUserchoice() {
+            const userchoice = prompt("Enter your choice: ");
+            return userchoice.toLowerCase();
+        }
+
+        function playRound() {
+            let computerChoice = getComputerchoice();
+            console.log(computerChoice);
+            let userChoice = getUserchoice();
+
+
+            if (computerChoice == userChoice) result = "Draw";
+            else if (userChoice == "scissors" & computerChoice == "papper") result = "You won!";
+            else if (userChoice == "papper" & computerChoice == "rock") result = "You won!";
+            else if (userChoice == "rock" & computerChoice == "scissors") result = "You won!";
+            else result = "You lose!";
+            if (result == "You won!") {
+                userScore += 5;
+                return result + "\n" + "Your score = " + userScore;
+            } else return(result);
+        }
+
+        for (i = 0; i < 5; i ++) {
+            console.log(playRound());
+        }
+
+    </script>
+</body>
+</html>
