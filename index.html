@@ -6,29 +6,24 @@
     <title>Rock-paper-scissors</title>
 </head>
 <body>
-    <h1>It is my Rock-paper-scissors game. <br> Enter 'rock', 'paper' or 'scissors' to play.</h1>
+    <h1>It is my Rock-paper-scissors game.</h1>
     <script>
 
         function getComputerchoice() {
-            const chance0 = Math.round(Math.random());
-            const chance1 = Math.round(Math.random());
-            if (chance0 !== chance1) {
+            const chance = Math.random();
+            if (0 < chance && chance <= 0.33) {
+                return("paper");
+            } else if (0.33 < chance && chance <= 0.66) {
+                return("rock");
+            } else if (0.66 < chance && chance <= 1) {
                 return("scissors");
-            } else { switch(chance0) {
-                case 1:
-                    return("paper");
-                    break;
-                case 0:
-                    return("rock");
-                    break;
-                }
             }
         }
 
         let userScore = 0;
 
         function getUserchoice() {
-            const userchoice = prompt("Enter your choice: ");
+            const userchoice = prompt("Rock-paper-scrissors game.\nEnter 'rock', 'paper' or 'scissors' to play. \nYour score = " + userScore);
             return userchoice.toLowerCase();
         }
 
@@ -44,14 +39,14 @@
             else result = "You lose!";
             if (result == "You won!") {
                 userScore += 5;
-                return result + "\n" + "Your score = " + userScore;
-            } else return(result);
-        }
+            }
+            return result;
+            }
 
-        for (i = 0; i < 5; i ++) {
+        while (userScore < 150) {
             console.log(playRound());
-        }
 
+        }
     </script>
 </body>
 </html>
