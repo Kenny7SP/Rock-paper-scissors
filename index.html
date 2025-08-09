@@ -3,51 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js-file.js"></script>
     <title>Rock-paper-scissors</title>
 </head>
 <body>
-    <h1>It is my Rock-paper-scissors game.</h1>
-    <script>
-
-        function getComputerchoice() {
-            const chance = Math.random();
-            if (0 < chance && chance <= 0.33) {
-                return("paper");
-            } else if (0.33 < chance && chance <= 0.66) {
-                return("rock");
-            } else if (0.66 < chance && chance <= 1) {
-                return("scissors");
-            }
-        }
-
-        let userScore = 0;
-
-        function getUserchoice() {
-            const userchoice = prompt("Rock-paper-scrissors game.\nEnter 'rock', 'paper' or 'scissors' to play. \nYour score = " + userScore).toLowerCase();
-            if (userchoice == "rock" || userchoice == "paper" || userchoice == "scissors") return userchoice;
-            else alert("NOT A VALID VALUE");
-        }
-
-        function playRound() {
-            let computerChoice = getComputerchoice();
-            let userChoice = getUserchoice();
-
-
-            if (computerChoice == userChoice) result = "Draw";
-            else if (userChoice == "scissors" & computerChoice == "paper") result = "You won!";
-            else if (userChoice == "paper" & computerChoice == "rock") result = "You won!";
-            else if (userChoice == "rock" & computerChoice == "scissors") result = "You won!";
-            else result = "You lose!";
-            if (result == "You won!") {
-                userScore += 5;
-            }
-            return result;
-            }
-
-        while (userScore < 150) {
-            console.log(playRound());
-
-        }
-    </script>
+    <div id="pad">
+        <div id="inner">
+            <div id="results">
+                <div id="winner">Result</div>
+                <div id="score">Your score = 0</div>
+            </div>
+            <div id="inner2">
+                <div id="makedChoices">
+                    <div id="computerChoice">Make a choice to start the game</div>
+                    <div id="playerChoice">Here will be your choice</div>
+                </div>
+            </div>
+            <ul id="buttons">
+                <li><button id="rock">Rock</button></li>
+                <li><button id="paper">Paper</button></li>
+                <li><button id="scissors">Scissors</button></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
